@@ -1,2 +1,4 @@
 elm-stuff/
-*.js
+main.js
+Main.js
+node_modules/
