@@ -1,8 +1,8 @@
 Arguments: 
-  /Users/johnschoeman/.asdf/installs/nodejs/9.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js build
+  /Users/johnschoeman/.asdf/installs/nodejs/9.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js api
 
 PATH: 
-  /Users/johnschoeman/.rvm/gems/ruby-2.4.1/bin:/Users/johnschoeman/.rvm/gems/ruby-2.4.1@global/bin:/Users/johnschoeman/.rvm/rubies/ruby-2.4.1/bin:.git/safe/../../bin:/Users/johnschoeman/.asdf/bin:/Users/johnschoeman/.asdf/shims:/Users/johnschoeman/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Users/johnschoeman/.rvm/bin:/usr/local/opt/fzf/bin
+  /Users/johnschoeman/workspace/elm_workspace/elm-tutorial-players-app/node_modules/.bin:/Users/johnschoeman/.config/yarn/link/node_modules/.bin:/Users/johnschoeman/workspace/elm_workspace/elm-tutorial-players-app/node_modules/.bin:/Users/johnschoeman/.config/yarn/link/node_modules/.bin:/Users/johnschoeman/.asdf/installs/nodejs/9.9.0/.npm/bin:/Users/johnschoeman/.asdf/installs/nodejs/9.9.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/johnschoeman/.asdf/installs/nodejs/9.9.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/johnschoeman/.asdf/installs/nodejs/9.9.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/johnschoeman/.rvm/gems/ruby-2.4.1/bin:/Users/johnschoeman/.rvm/gems/ruby-2.4.1@global/bin:/Users/johnschoeman/.rvm/rubies/ruby-2.4.1/bin:.git/safe/../../bin:/Users/johnschoeman/.asdf/bin:/Users/johnschoeman/.asdf/shims:/Users/johnschoeman/.bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Users/johnschoeman/.rvm/bin:/usr/local/opt/fzf/bin
 
 Yarn version: 
   1.5.1
@@ -6931,9 +6931,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 2
+  Exit signal: SIGKILL
   Command: sh
-  Arguments: -c webpack
+  Arguments: -c node api.js
   Directory: /Users/johnschoeman/workspace/elm_workspace/elm-tutorial-players-app
   Output:
   
