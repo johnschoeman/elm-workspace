@@ -1,28 +1,46 @@
 module Main exposing (..)
 
 import Html exposing (text, Html)
+import List
 
 
-type alias Dog =
+type alias Person =
     { name : String
     , age : Int
     }
 
 
-dog : Dog
-dog =
-    { name = "Spock"
-    , age = 3
-    }
+people =
+    [ { name = "Legolas", age = 2931 }
+    , { name = "Gimli", age = 139 }
+    ]
 
 
-renderDog : Dog -> String
-renderDog dog =
-    dog.name ++ " " ++ (toString <| dog.age)
+names : List Person -> List String
+names peeps =
+    List.map (\peep -> peep.name) peeps
 
 
-main : Html msg
+findPerson : String -> List Person -> Maybe Person
+findPerson name peeps =
+    List.foldl
+        (\peep memo ->
+            case memo of
+                Just _ ->
+                    memo
+
+                Nothing ->
+                    if peep.name == name then
+                        Just peep
+                    else
+                        Nothing
+        )
+        Nothing
+        peeps
+
+
 main =
-    dog
-        |> renderDog
+    people
+        |> findPerson "Legolas"
+        |> toString
         |> text
