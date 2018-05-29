@@ -3,21 +3,26 @@ module Main exposing (..)
 import Html exposing (text, Html)
 
 
-politely : String -> String
-politely phrase =
-    "Excuse me, " ++ phrase
+type alias Dog =
+    { name : String
+    , age : Int
+    }
 
 
-ask : String -> String -> String
-ask thing place =
-    " is there a " ++ thing ++ " in the " ++ place ++ "?"
+dog : Dog
+dog =
+    { name = "Spock"
+    , age = 3
+    }
 
 
-askPolitelyAboutFish : String -> String
-askPolitelyAboutFish =
-    politely << (ask "fish")
+renderDog : Dog -> String
+renderDog dog =
+    dog.name ++ " " ++ (toString <| dog.age)
 
 
 main : Html msg
 main =
-    text <| askPolitelyAboutFish "hat"
+    dog
+        |> renderDog
+        |> text
