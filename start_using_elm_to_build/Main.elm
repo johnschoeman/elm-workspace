@@ -1,46 +1,45 @@
 module Main exposing (..)
 
-import Html exposing (text, Html)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 import List
 
 
-type alias Person =
+type alias Ship =
     { name : String
-    , age : Int
+    , model : String
+    , cost : Int
     }
 
 
-people =
-    [ { name = "Legolas", age = 2931 }
-    , { name = "Gimli", age = 139 }
+ships =
+    [ { name = "X-wing", cost = 149999 }
+    , { name = "Millennium Falcon", cost = 100000 }
+    , { name = "Death Star", cost = 1000000000000 }
     ]
 
 
-names : List Person -> List String
-names peeps =
-    List.map (\peep -> peep.name) peeps
+renderShip ship =
+    li []
+        [ text ship.name
+        , text ", "
+        , b []
+            [ text <| toString ship.cost ]
+        ]
 
 
-findPerson : String -> List Person -> Maybe Person
-findPerson name peeps =
-    List.foldl
-        (\peep memo ->
-            case memo of
-                Just _ ->
-                    memo
-
-                Nothing ->
-                    if peep.name == name then
-                        Just peep
-                    else
-                        Nothing
-        )
-        Nothing
-        peeps
+renderShips ships =
+    div
+        [ style
+            [ ( "font-family", "-apple-system" )
+            , ( "padding", "1em" )
+            ]
+        ]
+        [ h1 [] [ text "Ships" ]
+        , ul [] (List.map renderShip ships)
+        ]
 
 
 main =
-    people
-        |> findPerson "Legolas"
-        |> toString
-        |> text
+    ships
+        |> renderShips
