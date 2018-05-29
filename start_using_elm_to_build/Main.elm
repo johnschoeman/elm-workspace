@@ -5,41 +5,18 @@ import Html.Attributes exposing (..)
 import List
 
 
-type alias Ship =
-    { name : String
-    , model : String
-    , cost : Int
-    }
+numbers =
+    [ 1, 2, 3, 4, 5 ]
 
 
-ships =
-    [ { name = "X-wing", cost = 149999 }
-    , { name = "Millennium Falcon", cost = 100000 }
-    , { name = "Death Star", cost = 1000000000000 }
-    ]
+printThing : thing -> Html msg
+printThing thing =
+    ul [] [ text <| toString thing ]
 
 
-renderShip ship =
-    li []
-        [ text ship.name
-        , text ", "
-        , b []
-            [ text <| toString ship.cost ]
-        ]
-
-
-renderShips ships =
-    div
-        [ style
-            [ ( "font-family", "-apple-system" )
-            , ( "padding", "1em" )
-            ]
-        ]
-        [ h1 [] [ text "Ships" ]
-        , ul [] (List.map renderShip ships)
-        ]
+fruits =
+    [ { name = "Orange" }, { name = "Banana" } ]
 
 
 main =
-    ships
-        |> renderShips
+    ul [] (List.map printThing fruits)
